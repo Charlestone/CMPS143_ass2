@@ -1,4 +1,5 @@
 from nltk.corpus import wordnet as wn
+import sys
 
 # http://stevenloria.com/tutorial-wordnet-textblob/
 # http://www.nltk.org/howto/wordnet.html
@@ -79,10 +80,13 @@ def print_other_lexical_rel():
     print("")
 
 if __name__ == '__main__':
-    print_syn_lemmas('dog')
-    print_def_exp(wn.synset("dog.n.01"))
-    print_lexical_rel(wn.synset("dog.n.01"))
-    print_other_lexical_rel()
+    org_stdout = sys.stdout
+    sys.stdout = open('wordnet.txt', 'w+')
+    print_syn_lemmas('chair')
+    print_def_exp(wn.synset("president.n.04"))
+    print_lexical_rel(wn.synset("president.n.04"))
+    sys.stdout = org_stdout
+    #print_other_lexical_rel()
 
     
     

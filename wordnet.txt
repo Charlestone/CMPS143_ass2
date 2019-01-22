@@ -1,0 +1,87 @@
+1. Synsets and Lemmas
+Word: chair
+
+Synsets:
+Synset('chair.n.01')
+Synset('professorship.n.01')
+Synset('president.n.04')
+Synset('electric_chair.n.01')
+Synset('chair.n.05')
+Synset('chair.v.01')
+Synset('moderate.v.01')
+
+First synset: Synset('chair.n.01')
+
+Lemma names: 
+chair
+
+Last lemmas: Lemma('chair.n.01.chair')
+
+Synset of Last lemmas: Synset('chair.n.01')
+
+Synset('chair.n.01'): lemma_name['chair']
+Synset('professorship.n.01'): lemma_name['professorship', 'chair']
+Synset('president.n.04'): lemma_name['president', 'chairman', 'chairwoman', 'chair', 'chairperson']
+Synset('electric_chair.n.01'): lemma_name['electric_chair', 'chair', 'death_chair', 'hot_seat']
+Synset('chair.n.05'): lemma_name['chair']
+Synset('chair.v.01'): lemma_name['chair', 'chairman']
+Synset('moderate.v.01'): lemma_name['moderate', 'chair', 'lead']
+
+Lemmas of chair:
+Lemma('chair.n.01.chair')
+Lemma('professorship.n.01.chair')
+Lemma('president.n.04.chair')
+Lemma('electric_chair.n.01.chair')
+Lemma('chair.n.05.chair')
+Lemma('chair.v.01.chair')
+Lemma('moderate.v.01.chair')
+
+
+2. Definitions and Examples
+Synset: Synset('president.n.04')
+Definition: the officer who presides at the meetings of an organization
+
+Example: ['address your remarks to the chairperson']
+
+Synsets of first lemma president: 
+Synset('president.n.01') : definition ( an executive officer of a firm or corporation)
+Synset('president_of_the_united_states.n.01') : definition ( the person who holds the office of head of state of the United States government)
+Synset('president.n.03') : definition ( the chief executive of a republic)
+Synset('president.n.04') : definition ( the officer who presides at the meetings of an organization)
+Synset('president.n.05') : definition ( the head administrative officer of a college or university)
+Synset('president_of_the_united_states.n.02') : definition ( the office of the United States head of state)
+
+
+3. Lexical Relations
+Synset: Synset('president.n.04')
+
+Hypernyms: [Synset('presiding_officer.n.01')]
+
+Hyponyms: [Synset('kalon_tripa.n.01'), Synset('vice_chairman.n.01')]
+
+Root hypernyms: [Synset('entity.n.01')]
+
+Hypernym path length of Synset('president.n.04') = 2 
+
+Path[0]:
+entity.n.01
+physical_entity.n.01
+causal_agent.n.01
+person.n.01
+leader.n.01
+presiding_officer.n.01
+president.n.04
+
+Path[1]:
+entity.n.01
+physical_entity.n.01
+object.n.01
+whole.n.02
+living_thing.n.01
+organism.n.01
+person.n.01
+leader.n.01
+presiding_officer.n.01
+president.n.04
+
+
