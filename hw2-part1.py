@@ -52,7 +52,9 @@ def get_noun_phrase(pos_sent):
     noun_phrases = []
 
     # Your code goes here
-
+    reg_2a = r"(((\w+)(?:\/DT\s))?((\w+)(?:\/(JJS|JJR|JJ)\s))*((\w+?)(?:\/(NNP|S|NNS|NNP|NN)))+)"
+    aux_list = re.findall(reg_2a, pos_sent)
+    noun_phrases = [get_words(match[0]) for match in aux_list]
 
     # END OF YOUR CODE
 
