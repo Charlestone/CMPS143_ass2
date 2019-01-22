@@ -25,9 +25,8 @@ def get_words(pos_sent):
     # words of each word/pos-tag in the sentence.
 
     # regular expression that matches words
-    reg_1a = r"(?P<word>.*?)\/(.*?)(\s|$)"
-    list = re.findall(reg_1a, pos_sent)
-    word_list = [match[0] for match in list]
+    reg_1a = r"(?P<word>.*?)\/(?:.*?)(?:\s|$)"
+    word_list = re.findall(reg_1a, pos_sent)
 
     # END OF YOUR CODE
     retval = " ".join(word_list) if len(word_list) > 0 else None
