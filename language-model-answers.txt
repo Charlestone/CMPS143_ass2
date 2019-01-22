@@ -82,17 +82,21 @@ bistro; wait staff; sunset restaurant; health department; medium rare;
 come back; much better; pattio area; somewhere else; fra diablo
 
 3.
-P(smashed ⋃ potatoes) = (7 + 10)/11890
+BIGRAM MODEL
+P(excellent, restaurant) = P(excellent)*P(restaurant | excellent) = (38/11890)*(2/38) = 1.68208579×10−4
 
 4.
-p(w1, w2, w3..., wn) ≈ p(w1)𝞟p(wi | wi−2, wi-1)
+TRIGRAM MODEL
+P(an, excellent, restaurant, .) = P(an) * P(excellent | an) * P(restaurant | excellent, an) * P(. | restaurant, excellent)
 The expression above would be of third order.
-p(w1, w2, w3..., wn) ≈ p(w1)𝞟p(wi | wi−3, wi-2, wi-1)
+4-GRAM MODEL
+P(an, excellent, restaurant, .) = P(an) * P(excellent | an) * P(restaurant | excellent, an) * P(. | restaurant, excellent, an)
 
 5.
+P(mashed ⋃ potatoes) = P(mashed) + P(potatoes) - P(mashed AND potatoes) = P(mashed) + P(potatoes) - P(potatoes | mashed) * P(mashed) = P(mashed) + P(potatoes) - (count(mashed, potatoes)/count(mashed)) * P(mashed = (7/11890) + (10/11890) - ((5/7) * (7/11890)) = 0.001009251472
 
 6.
-We could use the probability of that word in the sentence we are given by counting the words.
+The probability of that word would be 0 and that would lead to the probability of that phrase being 0.
 
 7.
 Since language has long distance dependencies, the greater the number of words we take in account, the more context we have for each word, the better the model.

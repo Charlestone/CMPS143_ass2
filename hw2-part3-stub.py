@@ -82,7 +82,7 @@ def process_reviews(file_name):
     with open('NEGATIVE-bigram-freq.txt', 'w+') as f:
         for tup in neg_big_fd.most_common():
             f.write(tup[0][0] + " " + tup[0][1] + " " + str(tup[1]) + "\n")
-            
+
     positive_text = nltk.Text(positive_texts)
     positive_text.collocations()
 
