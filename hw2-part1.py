@@ -52,7 +52,7 @@ def get_noun_phrase(pos_sent):
     noun_phrases = []
 
     # Your code goes here
-    reg_2a = r"(((\w+)(?:\/DT\s))?((\w+)(?:\/(JJS|JJR|JJ)\s))*((\w+?)(?:\/(NNP|S|NNS|NNP|NN)))+)"
+    reg_2a = r"(((\w+)(?:\/DT\s))?((\w+)(?:\/(JJS|JJR|JJ)\s))*((\w+?)(?:\/(NNPS|NNS|NNP|NN))\s?)+)"
     aux_list = re.findall(reg_2a, pos_sent)
     noun_phrases = [get_words(match[0]) for match in aux_list]
 
@@ -88,7 +88,10 @@ def most_freq_noun_phrase(pos_sent_fname, verbose=True):
         # your code starts here
 
         # do stuff with the story
-
+        noun_phrases = get_noun_phrase(story)
+        noun_phrases = [elem.lower() for elem in noun_phrases]
+        fd_noun_phrases = nltk.FreqDist(noun_phrases)
+        most_common = fd_noun_phrases.most_common(3)
         # end your code
         if verbose:
             print("The most freq NP in document[" + str(story_id) + "]: " + str(most_common))
