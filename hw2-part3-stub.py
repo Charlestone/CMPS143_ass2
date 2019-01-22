@@ -44,12 +44,50 @@ def process_reviews(file_name):
     positive_texts, negative_texts, first_sent = read_reviews(file_name)
 
     # There are 150 positive reviews and 150 negative reviews.
-    # print(len(positive_texts))
-    # print(len(negative_texts))
+    #print(positive_texts)
+    #print(negative_texts)
 
     # Your code goes here
-    
+    plus1character = r"\w+"
+    stopwords = nltk.corpus.stopwords.words('english')
 
+    positive_texts = [nltk.sent_tokenize(part) for part in positive_texts]
+    positive_texts = [nltk.word_tokenize(sent) for part in positive_texts for sent in part]
+    positive_texts = [word for sentence in positive_texts for word in sentence]
+    positive_texts = [word.lower() for word in positive_texts if word.lower not in stopwords]
+    positive_texts = [word for word in positive_texts if re.match(plus1character, word) is not None]
+
+    negative_texts = [nltk.sent_tokenize(part) for part in negative_texts]
+    negative_texts = [nltk.word_tokenize(sent) for part in negative_texts for sent in part]
+    negative_texts = [word for sentence in negative_texts for word in sentence]
+    negative_texts = [word.lower() for word in negative_texts if word.lower not in stopwords]
+    negative_texts = [word for word in negative_texts if re.match(plus1character, word) is not None]
+
+    pos_fd = nltk.FreqDist(positive_texts)
+    with open('POSITIVE-unigram-freq.txt', 'w+') as f:
+        for tup in pos_fd.most_common():
+            f.write(tup[0] + " " + str(tup[1]) + "\n")
+
+    neg_fd = nltk.FreqDist(negative_texts)
+    with open('NEGATIVE-unigram-freq.txt', 'w+') as f:
+        for tup in neg_fd.most_common():
+            f.write(tup[0] + " " + str(tup[1]) + "\n")
+
+    pos_big_fd = nltk.FreqDist(nltk.bigrams(positive_texts))
+    with open('POSITIVE-bigram-freq.txt', 'w+') as f:
+        for tup in pos_big_fd.most_common():
+            f.write(tup[0][0] + " " + tup[0][1] + " " + str(tup[1]) + "\n")
+
+    neg_big_fd = nltk.FreqDist(nltk.bigrams(negative_texts))
+    with open('NEGATIVE-bigram-freq.txt', 'w+') as f:
+        for tup in neg_big_fd.most_common():
+            f.write(tup[0][0] + " " + tup[0][1] + " " + str(tup[1]) + "\n")
+            
+    positive_text = nltk.Text(positive_texts)
+    positive_text.collocations()
+
+    negative_text = nltk.Text(negative_texts)
+    negative_text.collocations()
 
 # Write to File, this function is just for reference, because the encoding matters.
 def write_file(file_name, data):

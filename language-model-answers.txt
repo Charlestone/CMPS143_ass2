@@ -1,0 +1,98 @@
+1.
+NEGATIVE UNIGRAMS
+the 1081
+and 589
+to 553
+a 447
+was 431
+i 388
+of 320
+we 292
+it 240
+for 227
+that 205
+in 192
+not 183
+our 176
+were 171
+
+POSITIVE UNIGRAMS
+the 720
+and 439
+a 352
+to 245
+is 230
+of 219
+in 193
+i 182
+was 152
+it 138
+food 124
+we 123
+for 114
+you 111
+with 109
+
+NEGATIVE BIGRAMS
+of the 68
+the food 67
+it was 59
+and the 58
+to the 55
+we were 55
+in the 45
+food was 44
+for the 42
+on the 39
+the service 38
+for a 38
+to be 38
+we had 33
+service was 32
+
+POSITIVE BIGRAMS
+the food 65
+and the 54
+of the 53
+the best 38
+in the 38
+is a 37
+in a 31
+food is 30
+on the 27
+i have 26
+a great 26
+it was 25
+if you 24
+the service 22
+with a 22
+
+2.
+POSITIVE COLLOCATIONS
+chez capo; highly recommend; pancake house; san francisco; mashed
+potatoes; wine list; millbrae pancake; several times; big city; rosa
+negra; head chef; great place; ala carte; eastern market; outdoor
+patio; years ago; every time; browned butter; butternut squash; peach
+cobbler
+
+NEGATIVE COLLOCATIONS
+prime rib; coral grill; dining experience; fried rice; number one;
+crab legs; local boys; taco bell; tourist trap; looked like; 227
+bistro; wait staff; sunset restaurant; health department; medium rare;
+come back; much better; pattio area; somewhere else; fra diablo
+
+3.
+P(smashed ⋃ potatoes) = (7 + 10)/11890
+
+4.
+p(w1, w2, w3..., wn) ≈ p(w1)𝞟p(wi | wi−2, wi-1)
+The expression above would be of third order.
+p(w1, w2, w3..., wn) ≈ p(w1)𝞟p(wi | wi−3, wi-2, wi-1)
+
+5.
+
+6.
+We could use the probability of that word in the sentence we are given by counting the words.
+
+7.
+Since language has long distance dependencies, the greater the number of words we take in account, the more context we have for each word, the better the model.
